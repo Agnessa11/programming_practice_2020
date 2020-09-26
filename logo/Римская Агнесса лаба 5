@@ -1,0 +1,12 @@
+import numpy as np
+import matplotlib.pyplot
+x = [1, 2, 3, 4, 5, 6]
+y = [1, 1.42, 1.76, 2, 2.24, 2.5]
+x1=np.arange(0, 6, 0.01)
+plt.errorbar(x, y, xerr=0.1, yerr=0.1, linestyle = '')
+plt.plot(x,y)
+plt.scatter(x,y,60,marker = '^',color = 'r')
+plt.plot(x1,p_f(x1))
+plt.grid()
+
+plt.show()
