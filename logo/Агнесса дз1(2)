@@ -1,0 +1,5 @@
+s = str(input())
+n = int(input())
+
+print('Hello,' + ' ' + (s + ', ')*(n-1) + s)
+
