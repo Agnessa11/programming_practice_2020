@@ -1,0 +1,8 @@
+counter = {}
+for i in range(int(input())):
+    s = input().split()
+    for a in s:
+        counter[a] = counter.get(a, 0) + 1
+max_count = max(counter.values())
+q = [k for k, v in counter.items() if v == max_count]
+print(min(q))
