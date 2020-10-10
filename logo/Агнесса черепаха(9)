@@ -1,0 +1,14 @@
+import turtle
+turtle.shape('turtle')
+turtle.color('cyan')
+for i in range(3,10):
+    turtle.pendown()
+    for j in range(1,i+1):
+        turtle.forward(10*i)
+        turtle.right(360/i)
+    turtle.penup()
+    turtle.left(360/i)
+    turtle.forward(3*i +1)
+    turtle.right(360/i)
+
+

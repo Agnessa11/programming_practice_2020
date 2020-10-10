@@ -1,0 +1,9 @@
+import turtle
+turtle.shape('turtle')
+turtle.color('red')
+
+for i in range(100):
+    turtle.forward(10*i)
+    turtle.right(90)
+
+

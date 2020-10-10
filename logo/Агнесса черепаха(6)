@@ -1,0 +1,8 @@
+import turtle
+turtle.shape('turtle')
+n = 80
+for i in range(25):
+    turtle.forward(n)
+    turtle.stamp()
+    turtle.backward(n)
+    turtle.right(30)

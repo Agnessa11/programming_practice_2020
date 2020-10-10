@@ -1,0 +1,14 @@
+import turtle
+
+turtle.shape('turtle')
+turtle.color('green')
+turtle.speed(100)
+for j in range(11):
+    for i in range(100):
+        turtle.forward(1+0.5*j)
+        turtle.right(3.6)
+    turtle.right(180)
+    for i in range(100):
+        turtle.forward(1+0.5*j)
+        turtle.right(3.6)
+    turtle.right(180)
