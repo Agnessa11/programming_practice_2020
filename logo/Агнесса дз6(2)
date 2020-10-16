@@ -1,0 +1,16 @@
+def gcd(c, d):
+    while c != 0 and d != 0:
+        if c > d:
+            c %= d
+        else:
+            d %= c
+    return c + d
+
+
+a = b = 1
+while a != 0 or b != 0:
+    a = input("Two numbers: ")
+    a = a.split()
+    b = int(a[1])
+    a = int(a[0])
+    print("GCD:", gcd(a, b))
