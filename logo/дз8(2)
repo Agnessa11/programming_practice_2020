@@ -1,0 +1,5 @@
+import numpy as np
+Z = np.arange(2,76)
+print(Z[Z%2 == -1])
+Z[Z%2 == 1] = -1
+print(Z)

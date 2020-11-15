@@ -1,0 +1,7 @@
+import numpy as np
+
+a = np.arange(12).reshape(3, 4)
+b = np.arange(16).reshape(4, 4)
+np.save('example_1', a)
+c = np.load('example_1.npy')
+print(c)

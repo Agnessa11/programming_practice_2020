@@ -1,0 +1,17 @@
+import numpy as np
+Z = np.random.randint(10, 101)
+
+matrix_rand_1 = np.random.randint(Z, size=(Z, Z))
+max_value = matrix_rand_1.max()
+matrix_rand_1[matrix_rand_1] = matrix_rand_1 / max_value
+
+matrix_rand_2 = np.random.randint(Z, size=(Z, Z))
+mean_row_values = np.mean(matrix_rand_2, axis=1)
+
+for i in range(Z):
+    mean = mean_row_values[i]
+    matrix_rand_2[i, :] -= int(mean)
+
+matrix_rand_3 = np.random.randint(Z, size=(Z, Z))
+max_value = matrix_rand_3.max()
+matrix_rand_3[matrix_rand_3 == max_value] = -1
