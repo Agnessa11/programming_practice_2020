@@ -1,0 +1,61 @@
+class Vector(object):
+    def __init__(self, ndim):
+        self.ndim = ndim
+        self.buffer = [0 for i in range(ndim)]
+
+    def __len__(self):
+        return self.ndim
+
+    def __setitem__(self, i, value):
+        assert i < self.ndim
+        self.buffer[i] = value
+
+    def __getitem__(self, i):
+        return self.buffer[i]
+
+    def __add__(self, other):
+        assert self.ndim == other.ndim, 'Arguments have different dimensions'  # check that both arguments have same dimensions
+        result = Vector(self.ndim)
+        for i in range(self.ndim):
+            result[i] = self[i] + other[i]
+        return result
+
+    def __mul__(self, other):
+        result = Vector(self.ndim)
+        if isinstance(other, (int, long, float)):
+            for i in range(self.ndim):
+                result[i] = other * self[i]
+
+            return result
+
+        if isinstance(other, Vector):
+            assert self.ndim == other.ndim, 'Arguments have different dimensions'
+            for i in range(self.ndim):
+                result[i] = self[i] * other[i]
+            return result
+
+    def dot(self, other):
+        result = self.__mul__(other)
+        return sum(result.buffer)
+
+    def norm(self):
+        return self.dot(self)
+
+    def vecprod(self, other):
+        if self.ndim != 3:
+            raise NotImplementedError()
+
+        c = [self[1] * other[2] - self[2] * other[1],
+             self[2] * other[0] - self[0] * other[2],
+             self[0] * other[1] - self[1] * other[0]]
+        result = Vector(self.ndim)
+        result.buffer = c
+        return result
+
+
+
+
+
+
+
+
