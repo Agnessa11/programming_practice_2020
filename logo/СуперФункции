@@ -6,6 +6,12 @@ class Vector(object):
     def __len__(self):
         return self.ndim
 
+    def __repr__(self):
+        return ' '.join(map(str, self.buffer))
+
+    def __str__(self):
+        return self.__repr__()
+
     def __setitem__(self, i, value):
         assert i < self.ndim
         self.buffer[i] = value
@@ -22,10 +28,9 @@ class Vector(object):
 
     def __mul__(self, other):
         result = Vector(self.ndim)
-        if isinstance(other, (int, long, float)):
+        if isinstance(other, (int, float)):
             for i in range(self.ndim):
                 result[i] = other * self[i]
-
             return result
 
         if isinstance(other, Vector):
